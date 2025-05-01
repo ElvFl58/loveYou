@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Amor Eterno, Siomara ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Shadows+Into+Light&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Shadows Into Light', cursive;
+            background: linear-gradient(to bottom, #ffebee, #f8bbd0, #fcd4e6, #f48fb1, #e91e63);
+            color: #d81b60;
+            overflow-x: hidden;
+            padding-bottom: 100px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 4rem);
+            text-align: center;
+            margin: 40px 20px 0;
+            color: #f06292;
+            text-shadow: 2px 2px 3px rgba(255, 182, 193, 0.8);
+            animation: fadeIn 2s ease-out, pulseTitle 2s infinite alternate;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseTitle {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .heart-animation-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .animated-heart {
+            font-size: 15vw;
+            color: #f48fb1;
+            opacity: 0.7;
+            animation: pulseHeart 1.5s infinite alternate;
+        }
+
+        @keyframes pulseHeart {
+            0% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        .love-message-container {
+            text-align: center;
+            margin: 60px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: slideInUp 2s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .love-message {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            line-height: 1.6;
+            color: #d81b60;
+        }
+
+        .phrases-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .phrase {
+            font-family: 'Caveat', cursive;
+            font-size: 2rem;
+            padding: 10px 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 10px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            animation: fadePhrase 5s ease-in-out infinite;
+            max-width: 90%;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .phrase:hover {
+            background-color: #f8bbd0;
+            color: #e91e63;
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+
+        @keyframes fadePhrase {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            10%,
+            90% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+
+        .floating-hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .floating-hearts span {
+            position: absolute;
+            display: block;
+            color: #f06292;
+            animation: float 10s linear infinite;
+            font-size: 1.5rem;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(1);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        .te-amo-sho-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Caveat', cursive;
+            font-size: 10vw;
+            color: #e91e63;
+            text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.8);
+            opacity: 0;
+            animation: aparecerDesaparecerTeAmoSho 6s infinite;
+            z-index: -1;
+        }
+
+        @keyframes aparecerDesaparecerTeAmoSho {
+
+            0%,
+            80% {
+                opacity: 0;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: #555;
+            font-size: 1.1em;
+            font-style: italic;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 15px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 2rem;
+            color: #f06292;
+            opacity: 0.8;
+            pointer-events: none;
+            animation: moveHeart 3s forwards, colorChange 2s ease-in-out infinite;
+        }
+
+        @keyframes moveHeart {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-30px) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #ff4081;
+            }
+
+            25% {
+                color: #ff80ab;
+            }
+
+            50% {
+                color: #f06292;
+            }
+
+            75% {
+                color: #f48fb1;
+            }
+
+            100% {
+                color: #ff4081;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mi Amor Eterno, Siomara</h1>
+
+    <div class="heart-animation-container">
+        <div class="animated-heart">❤️</div>
+    </div>
+
+    <div class="love-message-container">
+        <p class="love-message">
+            Cada latido de este corazón es un eco constante de mi amor por ti, Siomara.<br />
+            Eres la melodía que siempre quiero escuchar.
+        </p>
+    </div>
+
+    <div class="phrases-container">
+        <div class="phrase">Eres el sueño más hermoso que mi corazón jamás imaginó.</div>
+        <div class="phrase phrase2">Contigo, cada momento se vuelve eterno y mágico.</div>
+        <div class="phrase phrase3">No necesito nada más, porque te tengo a ti, Siomara.</div>
+        <div class="phrase phrase4">Eres mi poesía, mi canción, mi todo.</div>
+    </div>
+
+    <div class="floating-hearts">
+        <span style="left: 20%;">💖</span>
+        <span style="left: 40%; animation-delay: 2s;">💘</span>
+        <span style="left: 60%; animation-delay: 4s;">💞</span>
+        <span style="left: 80%; animation-delay: 1s;">💕</span>
+        <span style="left: 30%; animation-delay: 3s;">❤️</span>
+    </div>
+
+    <div class="te-amo-sho-animation">Te Amo Siomara</div>
+
+    <footer>
+        Un amor que late eternamente por ti, Siomara. 💕
+    </footer>
+
+    <script>
+        // Animación de corazon flotante
+        function createFloatingHearts() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = '❤️';
+            document.body.appendChild(heart);
+
+            let startPosX = Math.random() * window.innerWidth;
+            let startPosY = window.innerHeight;
+            heart.style.left = startPosX + 'px';
+            heart.style.top = startPosY + 'px';
+
+            let animationDuration = 5 + Math.random() * 5; // Random duration between 5s and 10s
+            heart.style.animation = `moveHeart ${animationDuration}s forwards, colorChange 2s ease-in-out infinite`;
+
+            setTimeout(() => {
+                heart.remove();
+            }, animationDuration * 1000); // Remove after animation is finished
+        }
+
+        setInterval(createFloatingHearts, 1500); // Create new floating hearts every 1.5 seconds
+
+        // Animación de las frases
+        const phrases = document.querySelectorAll('.phrase');
+        phrases.forEach((phrase, index) => {
+            phrase.addEventListener('mouseenter', () => {
+                phrase.style.transition = 'transform 0.3s ease';
+                phrase.style.transform = 'scale(1.2)';
+                phrase.style.color = '#e91e63';
+                phrase.style.backgroundColor = '#f8bbd0';
+            });
+
+            phrase.addEventListener('mouseleave', () => {
+                phrase.style.transition = 'transform 0.3s ease';
+                phrase.style.transform = 'scale(1)';
+                phrase.style.color = '#d81b60';
+                phrase.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+            });
+        });
+        // Lista de frases que van a cambiar de forma aleatoria
+           const newPhrases = [
+                'Cada día contigo es una nueva razón para sonreír.',
+                'Eres la luz que ilumina mi vida, Siomara.',
+                'Contigo, cada momento es eterno y perfecto.',
+                'Eres mi amor infinito, mi todo, mi razón de ser.',
+                'Mi vida cobra sentido solo cuando estás a mi lado, Siomara.',
+                'No hay un segundo en el que no te ame más, Siomara.',
+                'Te llevo en mi alma, mi corazón late por ti siempre.',
+                'Eres el sueño que nunca quiero despertar, mi tesoro más grande.',
+                'Te amo con cada latido de mi corazón, Siomara.',
+                'Eres mi todo, mi razón, mi sol, mi luna y mi estrella.',
+                'Desde que llegaste a mi vida, todo tiene más color.',
+                'Mi corazón late por ti y solo por ti, Siomara.',
+                'Tus ojos son la ventana a mi felicidad.',
+                'El mundo es mejor contigo a mi lado.',
+                'No importa lo que pase, siempre estaré aquí para ti.',
+                'Te amo más que a nada en este mundo, mi amor eterno.',
+                'Cada día que paso contigo es un regalo que valoro infinitamente.',
+                'Eres mi razón para sonreír todos los días.',
+                'El amor que siento por ti es más grande que cualquier palabra.',
+                'Nunca imaginé que alguien pudiera hacerme tan feliz como tú lo haces.',
+                'A tu lado, el tiempo parece detenerse, porque todo es perfecto.',
+                'No necesito nada más que tu amor, Siomara.',
+                'Contigo soy feliz, y eso es todo lo que necesito.',
+                'Mi amor por ti crece más con cada amanecer.',
+                'Eres la persona que más quiero en este mundo.',
+                'No puedo dejar de pensar en ti, siempre estás en mi mente.',
+                'Cada momento contigo es único y especial.',
+                'Tu amor es lo mejor que me ha pasado en la vida.',
+                'Te pienso constantemente y me hace sonreír saber que te tengo a mi lado.',
+                'Tu voz es la melodía que me da paz y tranquilidad.',
+                'Siempre estaré a tu lado, sin importar lo que pase.',
+                'Eres mi sol, la que ilumina mis días grises.',
+                'Cada vez que veo tus ojos, encuentro mi hogar.',
+                'Eres la razón por la que me levanto con una sonrisa cada mañana.',
+                'Tú eres la pieza que completa mi vida.',
+                'Con solo pensar en ti, mi corazón se acelera de felicidad.',
+                'Eres mi sueño hecho realidad.',
+                'Gracias por ser tú, mi amor eterno.',
+                'Me haces sentir tan afortunado/a de tenerte a mi lado.',
+                'Eres todo lo que siempre soñé y mucho más.',
+                'Cada día me doy cuenta de lo afortunado/a que soy por tenerte.',
+                'Contigo todo tiene sentido, todo es mejor.',
+                'Tu amor es mi refugio en este mundo tan caótico.',
+                'Eres la persona con la que siempre soñé estar.',
+                'Mi amor por ti no tiene límites, Siomara.',
+                'No importa lo lejos que estemos, siempre estaré pensando en ti.',
+                'Eres la persona que quiero cuidar por el resto de mi vida.',
+                'El mejor momento del día es cuando estoy contigo.',
+                'Cada vez que te veo, mi corazón late más fuerte.',
+                'El amor que me das es más valioso que cualquier tesoro.',
+                'No me canso de repetírtelo: te amo más que a nada en este mundo.',
+                'Eres mi refugio, mi paz, mi amor eterno.',
+                'Tus abrazos son mi lugar favorito en el mundo.',
+                'El simple hecho de pensar en ti me hace sonreír.',
+                'A tu lado, la vida se siente más ligera y llena de amor.',
+                'Siempre que estoy contigo, el tiempo vuela.',
+                'Nunca dejes de ser tú, porque eres perfecto/a tal y como eres.',
+                'En tus brazos es donde siempre quiero estar.',
+                'Eres mi todo, y no hay nada que desee más que verte feliz.',
+                'El amor que siento por ti es más grande que cualquier cosa en este mundo.',
+                'Quiero que mi vida esté llena de momentos a tu lado, Siomara.',
+                'Eres el motivo de mi felicidad, mi razón de vivir.',
+                'Cada segundo a tu lado es un regalo que jamás quiero perder.',
+                'Eres mi lugar feliz, mi refugio en cualquier tormenta.',
+                'Si te amo más de lo que te amo ahora, es imposible de imaginar.',
+                'Tu amor es mi mayor bendición, Siomara.',
+                'Te amo más de lo que las palabras pueden expresar.',
+                'Tu sonrisa es mi medicina para cualquier tristeza.',
+                'Eres la chispa que enciende mi corazón.',
+                'Gracias por darme tanto amor, sin pedir nada a cambio.',
+                'No hay nada que me haga más feliz que verte feliz.',
+                'Siempre que te miro, siento que mi corazón se derrite.',
+                'Cada vez que nos abrazamos, el mundo desaparece a nuestro alrededor.',
+                'Eres el sueño que nunca quiero despertar.',
+                'Te amo con todo mi ser, y lo seguiré haciendo siempre.',
+                'Tus caricias son el consuelo que siempre he buscado.',
+                'Mi vida no sería igual sin ti, Siomara.',
+                'Eres el latido de mi corazón, el aire que respiro.',
+                'Cada instante a tu lado es una bendición.',
+                'No puedo imaginar mi vida sin ti a mi lado.',
+                'Gracias por enseñarme lo que es el verdadero amor.',
+                'Te amo hoy, mañana y siempre, no importa lo que pase.',
+                'Eres mi amor eterno, mi felicidad infinita.',
+                'La vida es más hermosa desde que llegaste a ella.',
+                'Mi amor por ti es más grande que cualquier palabra o gesto.',
+                'Eres la razón de mi sonrisa, Siomara.',
+                'A tu lado, todo es posible y todo tiene sentido.',
+                'Nunca dejaré de amarte, porque tú eres mi todo.',
+                'Con cada beso, siento que mi alma se eleva.',
+                'Eres la persona que más quiero, y siempre serás mi amor eterno.',
+                'Cada momento a tu lado es un regalo que atesoro.',
+                'Mi vida tiene más sentido desde que te conocí.',
+                'Eres lo mejor que me ha pasado en esta vida.',
+                'Cada día que paso contigo es un sueño hecho realidad.',
+                'Tu amor es mi paz, mi alegría, mi vida.',
+                'Eres el amor de mi vida, Siomara, y no hay nada que lo cambie.',
+                'Siempre estaré aquí, a tu lado, para siempre.',
+                'Mi corazón es tuyo, por siempre, Siomara.',
+                'Eres la razón por la que mi vida es tan especial.',
+                'El amor que siento por ti es eterno, y nunca se acabará.',
+                'No importa donde vaya, siempre te llevaré en mi corazón.',
+                'Tú eres el faro que ilumina mi vida en la oscuridad.',
+                'A tu lado soy la mejor versión de mí mismo/a.',
+                'Contigo, el futuro es brillante y lleno de amor.',
+                'Eres mi sueño hecho realidad, mi amor eterno.',
+                'Te amo más de lo que jamás creí que era posible.',
+                'A tu lado, todo es perfecto, porque eres perfecto/a para mí.',
+                'Cada segundo sin ti es como una eternidad.',
+                'Si mi amor por ti fuera un océano, no tendría fin.',
+                'No hay nada más hermoso que el amor que compartimos.',
+                'Quiero pasar toda mi vida demostrando cuánto te amo.'
+            ];
+
+            // Seleccionar todas las frases en la página
+            let phraseElements = document.querySelectorAll('.phrase');
+            let phraseElement2 = document.querySelectorAll('.phrase2');
+            let phraseElement3 = document.querySelectorAll('.phrase3');
+            let phraseElement4 = document.querySelectorAll('.phrase4');
+
+            // Función para actualizar las frases aleatorias
+            function changePhrases() {
+                let randomIndex = Math.floor(Math.random() * newPhrases.length);
+                phraseElements.forEach(phrase => {
+                    phrase.textContent = newPhrases[randomIndex];
+                });
+
+                randomIndex = Math.floor(Math.random() * newPhrases.length);
+                phraseElement2.forEach(phrase => {
+                    phrase.textContent = newPhrases[randomIndex];
+                });
+
+                randomIndex = Math.floor(Math.random() * newPhrases.length);
+                phraseElement3.forEach(phrase => {
+                    phrase.textContent = newPhrases[randomIndex];
+                });
+                randomIndex = Math.floor(Math.random() * newPhrases.length);
+                phraseElement4.forEach(phrase => {
+                    phrase.textContent = newPhrases[randomIndex];
+                });
+            }
+
+            // Cambiar frases cada 5 segundos
+            setInterval(changePhrases, 5000);
+    </script>
+</body>
+
+</html>
