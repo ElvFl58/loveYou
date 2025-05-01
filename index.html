@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Regresiva para Kat</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            height: 100vh;
+            overflow: hidden;
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            position: relative;
+            text-align: center;
+            animation: bgChange 30s infinite alternate;
+        }
+
+        @keyframes bgChange {
+            0% {
+                background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            }
+
+            50% {
+                background: linear-gradient(135deg, #ffd6e8, #ffe0f0);
+            }
+
+            100% {
+                background: linear-gradient(135deg, #ffe4ec, #ffc1cc);
+            }
+        }
+
+        .container {
+            z-index: 2;
+            position: relative;
+            padding: 20px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 60px;
+            color: #ff4f81;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px rgba(255, 100, 150, 0.8);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ff4f81;
+            }
+
+            to {
+                text-shadow: 0 0 30px #fff0f5, 0 0 40px #ff4f81;
+            }
+        }
+
+        .countdown {
+            font-size: 100px;
+            color: #ff4f81;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            animation: heartbeat 1.2s ease-in-out infinite;
+            margin: 30px 0;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.1);
+            }
+
+            50% {
+                transform: scale(0.95);
+            }
+
+            75% {
+                transform: scale(1.05);
+            }
+        }
+
+        .sorpresa {
+            font-size: 45px;
+            color: #fff;
+            text-shadow: 0 0 10px #ff4f81, 0 0 30px #fff;
+            display: none;
+            animation: fadeIn 2s ease-in-out, glow 3s infinite alternate;
+        }
+
+        .heart,
+        .floating-heart {
+            font-size: 30px;
+            position: absolute;
+            color: #ff4f81;
+            opacity: 0.8;
+            animation: heartFall 5s infinite ease-in-out;
+        }
+
+        @keyframes heartFall {
+            0% {
+                top: -10%;
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+
+            100% {
+                top: 110%;
+                opacity: 0;
+                transform: translateX(30px) scale(1.5);
+            }
+        }
+
+        .floating-heart {
+            animation: floatHearts 10s linear infinite;
+        }
+
+        @keyframes floatHearts {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: confettiFall 4s infinite ease-in-out;
+            opacity: 0.7;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .momentos {
+            margin-top: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .momentos h2 {
+            font-size: 40px;
+            color: #ff4f81;
+            margin-bottom: 30px;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .momentos .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .momentos .gallery img {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .momentos .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logan{
+            position: absolute;
+            display: flex;
+            z-index: -21;
+            top: 0 ;
+            right: 0;
+            margin-right: 30px;
+            border: none;
+            border-radius: 100% 42px;
+        }
+         .oli{
+           width: .1px;
+           height: .1px;
+           /* position: absolute;
+           z-index: -200; */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <img class="logan"
+        src="https://scontent.flim6-2.fna.fbcdn.net/v/t39.30808-6/481473497_1738514420342768_980658269813437455_n.jpg?stp=c0.372.922.922a_dst-jpg_s206x206_tt6&_nc_cat=111&ccb=1-7&_nc_sid=50c75d&_nc_eui2=AeGsHsr4qfdH3g6aJt_kkgAn-jQSYn1sK8f6NBJifWwrx7YBTvpuknjGK2bnU4JC_qS0YNhNlh56VbUp1de9rDFN&_nc_ohc=mjDTBQ6tzz0Q7kNvwFxqJeW&_nc_oc=Adn5WQUfL0TGFquf-ZbtPctMPwAGKmNWugtSjJU6C_hDwK7hbDDW6JJVSdMBS-SZDWg&_nc_zt=23&_nc_ht=scontent.flim6-2.fna&_nc_gid=w1XFSKvP68iov0khPjMG6A&oh=00_AfGNV0BrJZI5crZq1riAenhCSV686AFeqQRkj4xNjn_lzg&oe=68199C37"
+        alt="Momento 5">
+    <div class="container">
+        <h1>Cuenta Regresiva para Kat</h1>
+        <div class="countdown" id="countdown"></div>
+        <div class="sorpresa" id="sorpresa">¡Feliz Cumpleaños, Katy! 🎉❤️</div>
+       
+        <div class="momentos">
+            
+            <h2>Recuerdos con Brillo Propio 🌟</h2>
+            <div class="gallery">
+                <img src="https://scontent.flim6-2.fna.fbcdn.net/v/t39.30808-1/465475307_1654323118761899_6438359673231807167_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=102&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeFCgMpKjf4g1xB82KBxnpioCBUKVzvxQ8MIFQpXO_FDwwGmrJGGGSD66zUqhjCWynJ6UJtJNn0Nv37gFSBaweJT&_nc_ohc=3hMI5nlHiTgQ7kNvwH0eiYj&_nc_oc=AdlLwarox-2MHx1qEOiYNTR_o_vvG8HyhzJiuyURvRN-9LK6XZ2gtz4K39OefQySROM&_nc_zt=24&_nc_ht=scontent.flim6-2.fna&_nc_gid=BYcD3lC6iaxxK01BLTLcyQ&oh=00_AfHIrcRRGsWMDp8LN4PuM62Kb8Ez-1gb4eneQRk3CoImlg&oe=6819A592" alt="Momento 1">
+                <img src="https://scontent.flim6-3.fna.fbcdn.net/v/t39.30808-6/482249266_1741640616696815_3071064504964160687_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHy41E80k1I1W3tIxprfqABSRl_lO3YVQ1JGX-U7dhVDXKfdXTqOInGfQLX0MnXTkA3-E72Z066rjNdKST8gZz9&_nc_ohc=-GfTarzj8fIQ7kNvwFNU--3&_nc_oc=Adnckd0NowyjBZH0-ot09gj9VqZpjKY7VCazBAVg5rW0o4Zii8IwRlhliEM6no9fag4&_nc_zt=23&_nc_ht=scontent.flim6-3.fna&_nc_gid=BYcD3lC6iaxxK01BLTLcyQ&oh=00_AfHX5Kf73Zjyg_qLrc0Dr4aSIzJi9ITYpZkz4KtAhXbGeQ&oe=6819BD87" alt="Momento 2">
+                <img src="https://scontent.flim6-2.fna.fbcdn.net/v/t39.30808-6/482092052_1739077913619752_1162713970754614048_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=111&ccb=1-7&_nc_sid=fe5ecc&_nc_eui2=AeFobK_G8rs0-HFLFOr5IV_ooBb2abx-Qk6gFvZpvH5CThuQMTALVs5e67x54H9cnZTL2RUdDAH1Qca7yWw0-D6z&_nc_ohc=gvs-HykaEbkQ7kNvwFWZH7S&_nc_oc=AdmwsFHOXVEnvfwXQ8sNRLFpI46cbIXr7hhJ4omIQW-Rq6C2I73JpWSg2IEh3Iy-aOU&_nc_zt=23&_nc_ht=scontent.flim6-2.fna&_nc_gid=rsJfJNNAEE1CERkf_6yhUg&oh=00_AfEVlcjkqOUIRhHYWrl5s5vtgeRpS7vwbJh0_YzNZLCy5w&oe=6819B449"
+                    alt="Momento 4">
+                <img src="https://scontent.flim6-2.fna.fbcdn.net/v/t39.30808-6/481230858_1736367450557465_6759096212121209343_n.jpg?stp=c0.93.844.844a_dst-jpg_s206x206_tt6&_nc_cat=111&ccb=1-7&_nc_sid=50ad20&_nc_eui2=AeEyR41WzDfCg6MlpKOGXs5kg5hhyl5Vg9SDmGHKXlWD1IXInrjFkq2YwRufCk7mZuALP4JwYbsWplnByPY6EF6L&_nc_ohc=mgwy_p7YvUQQ7kNvwGQhwMJ&_nc_oc=AdkCQVLWy6Uc5bGjjZ9oLIh_UecPEqe34PUkCKPae2d6g1WD6n5i-M8xxLOVy_VL_sQ&_nc_zt=23&_nc_ht=scontent.flim6-2.fna&_nc_gid=rsJfJNNAEE1CERkf_6yhUg&oh=00_AfGNwbedHYQ7ZPSpqnYzgh6cGfv7zDvNaC-J1YBjF7QJFw&oe=6819BC29"
+                        alt="Momento 5">
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Corazones cayendo -->
+    <div class="heart" style="left: 10%; animation-delay: 0s;">❤️</div>
+    <div class="heart" style="left: 30%; animation-delay: 1s;">🤍🧃</div>
+    <div class="heart" style="left: 60%; animation-delay: 2s;">💖</div>
+    <div class="heart" style="left: 60%; animation-delay: 2s;">💫</div>
+
+    <!-- Corazones flotando horizontalmente -->
+    <div class="floating-heart" style="left: 15%; top: 90%;">🎉</div>
+    <div class="floating-heart" style="left: 15%; top: 90%;">🎉</div>
+    <div class="floating-heart" style="left: 15%; top: 90%;">🎉</div>
+    <div class="floating-heart" style="left: 50%; top: 95%;">✨</div>
+    <div class="floating-heart" style="left: 50%; top: 95%;">✨</div>
+    <div class="floating-heart" style="left: 75%; top: 85%;">🌟</div>
+    <div class="floating-heart" style="left: 75%; top: 85%;">🌟</div>   
+
+    <!-- Confeti colorido -->
+    <div class="confetti" style="left: 5%; background: #ff4f81; animation-delay: 0s;"></div>
+    <div class="confetti" style="left: 15%; background: #ff69b4; animation-delay: 1s;"></div>
+    <div class="confetti" style="left: 25%; background: #f06292; animation-delay: 2s;"></div>
+    <div class="confetti" style="left: 35%; background: #ec407a; animation-delay: 3s;"></div>
+    <div class="confetti" style="left: 45%; background: #e91e63; animation-delay: 4s;"></div>
+    <video controls autoplay muted poster="" class="oli">
+        <source src="ROI.mp4" type="video/mp4">
+        <track src="captions.vtt" default kind="captions" srclang="es">
+        Tu navegador no soporta el audio.
+    </video>
+    <script>
+         function videoPlay() {
+                const video = document.querySelector('.oli')
+                video.muted = false
+                video.style.display = 'none'
+            }
+            setInterval(videoPlay, 1000)
+        // setTimeout(() => window.location.href = "happy.html", 2000);
+        var birthday = new Date("August 30, 2025 00:00:00").getTime();
+
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = birthday - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").style.display = "none";
+                document.getElementById("sorpresa").style.display = "block";
+                document.body.style.background = "linear-gradient(135deg, #ff6f61, #ffb6c1)";
+                var audio = new Audio('https://www.soundjay.com/button/beep-07.wav');
+                audio.play();
+                setTimeout(() => window.location.href = "happy.html", 2000);
+            }
+        }, 1000);
+        
+    </script>
+</body>
+
+</html>
